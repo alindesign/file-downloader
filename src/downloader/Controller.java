@@ -72,10 +72,12 @@ public class Controller implements Initializable {
     }
 
     private void write(File file) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-            writer.write(this.content);
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (file != null) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+                writer.write(this.content);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
