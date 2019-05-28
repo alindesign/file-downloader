@@ -17,6 +17,7 @@ public class Controller implements Initializable {
     public Button downloadButton;
     public TextArea contentText;
     public Button saveButton;
+    public Button clearButton;
 
     private String content = "";
     private FileChooser fileChooser;
@@ -43,6 +44,11 @@ public class Controller implements Initializable {
                 this.alert(Alert.AlertType.ERROR, "Save error!", ex.getMessage());
                 ex.printStackTrace();
             }
+        });
+
+        clearButton.onActionProperty().setValue((e) -> {
+            content = "";
+            fillContent();
         });
 
         this.fileChooser = new FileChooser();
@@ -97,7 +103,7 @@ public class Controller implements Initializable {
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
-        StringBuffer response = new StringBuffer();
+        StringBuilder response = new StringBuilder();
 
         while ((inputLine = in.readLine()) != null) {
             response.append(String.format("%s\n", inputLine));
