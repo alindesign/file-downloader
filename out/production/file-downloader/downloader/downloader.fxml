@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="downloader.Controller">
+    <HBox alignment="CENTER" prefHeight="40.0" style="-fx-background-color: #263238;" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets left="24.0" right="24.0" top="14.0"/>
+        </padding>
+        <Label prefWidth="36.0" style="-fx-text-fill: #ffffff;" text="URL:">
+            <HBox.margin>
+                <Insets right="24.0"/>
+            </HBox.margin>
+        </Label>
+        <TextField fx:id="addressField" prefHeight="26.0" prefWidth="560.0"
+                   style="-fx-background-color: #546E7A; -fx-text-fill: #fff;"/>
+        <Button fx:id="downloadButton" mnemonicParsing="false" prefWidth="84.0"
+                style="-fx-background-color: #546E7A; -fx-text-fill: #fff;" text="Download">
+            <HBox.margin>
+                <Insets left="24.0"/>
+            </HBox.margin>
+        </Button>
+    </HBox>
+    <HBox prefHeight="245.0" prefWidth="794.0" style="-fx-background-color: #263238;">
+        <TextArea fx:id="contentText" prefHeight="168.0" prefWidth="746.0"
+                  style="-fx-control-inner-background: #546E7A; -fx-border-color: #546E7A;" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+                <Insets bottom="14.0" left="24.0" right="24.0" top="14.0"/>
+            </HBox.margin>
+        </TextArea>
+    </HBox>
+    <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #263238;" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="8.0" left="24.0" right="24.0"/>
+        </padding>
+        <Button fx:id="clearButton" mnemonicParsing="false"
+                style="-fx-background-color: #546E7A; -fx-text-fill: #fff;" text="Clear">
+            <HBox.margin>
+                <Insets right="24.0"/>
+            </HBox.margin>
+        </Button>
+        <Button fx:id="saveButton" mnemonicParsing="false"
+                style="-fx-background-color: #546E7A; -fx-text-fill: #fff;" text="Save"/>
+    </HBox>
+</VBox>
